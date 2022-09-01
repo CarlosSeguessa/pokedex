@@ -77,10 +77,8 @@ export  const pokemones = [
         id: "005",
         img: "/img/pikachu.png",
         name: "Pikachu",
-        types : {
-            type1: "Electric",
-            type2: "",
-        },
+        type1: "Electric",
+        type2: "",
         height: "0.4",
         weight: "6.0",
         moves: "Mega-Punch, Pay-Day",
