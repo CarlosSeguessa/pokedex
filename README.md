@@ -1,6 +1,6 @@
 # Pokedex
 Project for Senpai Academy bootcamp
-Made in [React](https://en.reactjs.org/) with [Vite](https://github.com/vitejs/vite)
+Made in [React](https://en.reactjs.org/) with [Vite](https://github.com/vitejs/vite) ⚡
 
 ## Available Scripts
 
