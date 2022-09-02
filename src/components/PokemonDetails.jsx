@@ -1,9 +1,10 @@
 import React from 'react'
-
-const PokemonDetails = () => {
+import { useParams, Link } from "react-router-dom";
+const PokemonDetails = (props) => {
+    let params = useParams();
     return (
         <>
-            
+                 
         </>
     );
 }

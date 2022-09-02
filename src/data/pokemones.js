@@ -1,7 +1,7 @@
-export  const pokemones = [
+ let pokemones = [
     {
-        id: 01,
-        img: "./img/bulbasaur.png",
+        id: "001",
+        img: "/img/bulbasaur.png",
         name: "Bulbasaur",
         type1: "Grass",
         type2: "Poison",
@@ -166,3 +166,6 @@ export  const pokemones = [
     
 ];
 
+export function getpokemones() {
+    return pokemones
+};
