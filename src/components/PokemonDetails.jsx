@@ -1,6 +1,7 @@
-import React from "react";
-
+import React from 'react'
+import { useParams, Link } from "react-router-dom";
 const PokemonDetails = () => {
+let params = useParams();
   return (
     <>
       <main className="bg-[#74CB48] w-full h-screen">

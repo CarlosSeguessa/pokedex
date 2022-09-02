@@ -1,8 +1,8 @@
 import React from "react";
 import Pokemones from "./Pokemones";
-
-const Home = () => {
+const Home = (props) => {
   return (
+    
     <>
       <header className="w-full flex flex-col">
         <div className="w-full flex items-center justify-between px-4">
@@ -21,7 +21,7 @@ const Home = () => {
             <input className="w-full text-center mt-8 px-4 py-2 h-10 rounded-lg border-2 border-gray-300 focus:outline-none focus:border-gray-500" type="text" placeholder="🔎 Buscar"/>
         </div>
       </header>
-        <Pokemones />
+        <Pokemones pokemones={props.pokemones} />
     </>
   );
 };
