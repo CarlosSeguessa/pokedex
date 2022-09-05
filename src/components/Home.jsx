@@ -1,9 +1,27 @@
-import React from "react";
-import { useState } from "react";
+import React, from "react";
 import Pokemones from "./Pokemones";
 import Buscador from "./Buscador";
+import { useState, useEffect } from "react";
 const Home = ({ pokemones }) => {
   const [pokemonesActuales, setPokemonesActuales] = useState(pokemones);
+  const [newlist, setNewList] = useState(props.pokemones);
+  const [flag, setFlag] = useState(true);
+
+  const ordenar = () => {
+    let sortedList;
+    if (flag) {
+      sortedList = [...newlist].sort((a, b) =>
+        a.name > b.name ? 1 : a.name < b.name ? -1 : 0
+      );
+    } else {
+      sortedList = [...newlist].sort((a, b) =>
+        a.id > b.id ? 1 : a.id < b.id ? -1 : 0
+      );
+    }
+    setNewList(sortedList);
+    setFlag(!flag);
+  };
+   
   return (
     <>
       <header className="w-full flex flex-col">
@@ -12,7 +30,7 @@ const Home = ({ pokemones }) => {
             <img className="w-10 mr-4" src="/img/Pokeball.png" alt="Pokeball" />
             <h1 className="font-bold text-3xl">Pokédex</h1>
           </div>
-          <button>
+          <button onClick={ordenar}>
             <div className="mt-8 flex items-center justify-center">
               <p>#</p>
               <img
@@ -29,7 +47,8 @@ const Home = ({ pokemones }) => {
           setPokemonesActuales={setPokemonesActuales}
         />
       </header>
-      <Pokemones pokemonesActuales={pokemonesActuales} />
+      <Pokemones pokemones={newlist} pokemonesActuales={pokemonesActuales} />
+
     </>
   );
 };
