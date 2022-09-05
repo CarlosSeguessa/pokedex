@@ -1,4 +1,4 @@
- let pokemones = [
+let pokemones = [
     {
         id: "001",
         img: "/img/bulbasaur.png",
@@ -17,7 +17,7 @@
         sdef: "065",
         spd: "045",
 
-        
+
     },
     {
         id: "002",
@@ -163,9 +163,10 @@
         sdef: "040",
         spd: "030",
     },
-    
+
 ];
 
 export function getpokemones() {
     return pokemones
 };
+export default pokemones;

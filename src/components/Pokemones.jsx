@@ -1,11 +1,11 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
 
-const Pokemones = (props) => {
+const Pokemones = ({ pokemonesActuales }) => {
   return (
     <>
       <main className="grid gap-3 grid-cols-3 auto-rows-max mt-[16px] px-[16px]">
-        {props.pokemones.map((pokemon, i) => (
+        {pokemonesActuales.map((pokemon, i) => (
           <Link
             to={`/pokemondetails/${pokemon.id}`}
             key={i}
@@ -31,7 +31,7 @@ const Pokemones = (props) => {
           </Link>
         ))}
       </main>
-        <Outlet />
+      <Outlet />
     </>
   );
 };

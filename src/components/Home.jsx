@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Pokemones from "./Pokemones";
-const Home = (props) => {
+import Buscador from "./buscador";
+const Home = ({ pokemones }) => {
+  const [pokemonesActuales, setPokemonesActuales] = useState(pokemones)
+
   return (
-    
+
     <>
       <header className="w-full flex flex-col">
         <div className="w-full flex items-center justify-between px-4">
@@ -18,10 +21,10 @@ const Home = (props) => {
           </button>
         </div>
         <div className="px-[16px]">
-            <input className="w-full text-center mt-8 px-4 py-2 h-10 rounded-lg border-2 border-gray-300 focus:outline-none focus:border-gray-500" type="text" placeholder="🔎 Buscar"/>
+          <Buscador pokemones={pokemones} pokemonesActuales={pokemonesActuales} setPokemonesActuales={setPokemonesActuales} />
         </div>
+        <Pokemones pokemonesActuales={pokemonesActuales} />
       </header>
-        <Pokemones pokemones={props.pokemones} />
     </>
   );
 };
