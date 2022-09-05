@@ -1,7 +1,9 @@
-import React, { useCallback } from "react";
+import React, from "react";
 import Pokemones from "./Pokemones";
+import Buscador from "./Buscador";
 import { useState, useEffect } from "react";
-const Home = (props) => {
+const Home = ({ pokemones }) => {
+  const [pokemonesActuales, setPokemonesActuales] = useState(pokemones);
   const [newlist, setNewList] = useState(props.pokemones);
   const [flag, setFlag] = useState(true);
 
@@ -19,17 +21,7 @@ const Home = (props) => {
     setNewList(sortedList);
     setFlag(!flag);
   };
-  //if (){
-  //   let newPokemonList = [...newlist].sort((a, b) =>
-  //   a.id > b.id ? 1 : a.id < b.id ? -1 : 0,
-  //   );
-  //  setNewList(newPokemonList);
-  // }
-
-  //if (newPokemonList[0] === newlist[0])
-  //  newPokemonList = [...newlist].sort((b, a) =>
-  //    a.name < b.name ? 1 : a.name > b.name ? -1 : 0
-  //  );
+   
   return (
     <>
       <header className="w-full flex flex-col">
@@ -49,15 +41,14 @@ const Home = (props) => {
             </div>
           </button>
         </div>
-        <div className="px-[16px]">
-          <input
-            className="w-full text-center mt-8 px-4 py-2 h-10 rounded-lg border-2 border-gray-300 focus:outline-none focus:border-gray-500"
-            type="text"
-            placeholder="🔎 Buscar"
-          />
-        </div>
+        <Buscador
+          pokemones={pokemones}
+          pokemonesActuales={pokemonesActuales}
+          setPokemonesActuales={setPokemonesActuales}
+        />
       </header>
-      <Pokemones pokemones={newlist} />
+      <Pokemones pokemones={newlist} pokemonesActuales={pokemonesActuales} />
+
     </>
   );
 };
