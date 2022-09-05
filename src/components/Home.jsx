@@ -1,10 +1,9 @@
-import React, from "react";
+import React from "react";
 import Pokemones from "./Pokemones";
 import Buscador from "./Buscador";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 const Home = ({ pokemones }) => {
-  const [pokemonesActuales, setPokemonesActuales] = useState(pokemones);
-  const [newlist, setNewList] = useState(props.pokemones);
+  const [newlist, setNewList] = useState(pokemones);
   const [flag, setFlag] = useState(true);
 
   const ordenar = () => {
@@ -21,7 +20,7 @@ const Home = ({ pokemones }) => {
     setNewList(sortedList);
     setFlag(!flag);
   };
-   
+
   return (
     <>
       <header className="w-full flex flex-col">
@@ -31,8 +30,15 @@ const Home = ({ pokemones }) => {
             <h1 className="font-bold text-3xl">Pokédex</h1>
           </div>
           <button onClick={ordenar}>
-            <div className="mt-8 flex items-center justify-center">
-              <p>#</p>
+            <div className="mt-8 flex h-1 items-center justify-center">
+              {flag ? (
+                <p>#</p>
+              ) : (
+                <div className="flex">
+                  <p className="">A-</p>
+                  <p>Z</p>
+                </div>
+              )}
               <img
                 className="w-4"
                 src="/icons/Arrow.svg"
@@ -43,12 +49,11 @@ const Home = ({ pokemones }) => {
         </div>
         <Buscador
           pokemones={pokemones}
-          pokemonesActuales={pokemonesActuales}
-          setPokemonesActuales={setPokemonesActuales}
+          pokemonesActuales={newlist}
+          setPokemonesActuales={setNewList}
         />
       </header>
-      <Pokemones pokemones={newlist} pokemonesActuales={pokemonesActuales} />
-
+      <Pokemones pokemones={newlist} />
     </>
   );
 };

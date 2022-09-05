@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const PokemonCard = (props) => {
   return (
     <>
-      {props.pokemones.map((pokemon, i) => (
+      {props.pokemon.map((pokemon, i) => (
         <Link
           to={`/pokemondetails/${pokemon.id}`}
           key={i}
