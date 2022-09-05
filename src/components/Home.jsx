@@ -1,8 +1,10 @@
 import React from "react";
+import { useState } from "react";
 import Pokemones from "./Pokemones";
-const Home = (props) => {
+import Buscador from "./Buscador";
+const Home = ({ pokemones }) => {
+  const [pokemonesActuales, setPokemonesActuales] = useState(pokemones);
   return (
-    
     <>
       <header className="w-full flex flex-col">
         <div className="w-full flex items-center justify-between px-4">
@@ -13,15 +15,21 @@ const Home = (props) => {
           <button>
             <div className="mt-8 flex items-center justify-center">
               <p>#</p>
-              <img className="w-4" src="/icons/Arrow.svg" alt="Filtered by id" />
+              <img
+                className="w-4"
+                src="/icons/Arrow.svg"
+                alt="Filtered by id"
+              />
             </div>
           </button>
         </div>
-        <div className="px-[16px]">
-            <input className="w-full text-center mt-8 px-4 py-2 h-10 rounded-lg border-2 border-gray-300 focus:outline-none focus:border-gray-500" type="text" placeholder="🔎 Buscar"/>
-        </div>
+        <Buscador
+          pokemones={pokemones}
+          pokemonesActuales={pokemonesActuales}
+          setPokemonesActuales={setPokemonesActuales}
+        />
       </header>
-        <Pokemones pokemones={props.pokemones} />
+      <Pokemones pokemonesActuales={pokemonesActuales} />
     </>
   );
 };
