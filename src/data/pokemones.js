@@ -11,12 +11,14 @@ let pokemones = [
     description:
       "There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger.",
     cardColor: "#74CB48",
-    hp: "045",
-    atk: "045",
-    def: "049",
-    satk: "065",
-    sdef: "065",
-    spd: "045",
+    stats: {
+      hp: "045",
+      atk: "045",
+      def: "049",
+      satk: "065",
+      sdef: "065",
+      spd: "045",
+    },
   },
   {
     id: "2",
@@ -30,12 +32,14 @@ let pokemones = [
     description:
       "It has a preference for hot things. When it rains, steam is said to spout from the tip of its tail.",
     cardColor: "#F57D31",
-    hp: "039",
-    atk: "052",
-    def: "043",
-    satk: "060",
-    sdef: "050",
-    spd: "065",
+    stats: {
+      hp: "039",
+      atk: "052",
+      def: "043",
+      satk: "060",
+      sdef: "050",
+      spd: "065",
+    },
   },
   {
     id: "3",
@@ -49,12 +53,14 @@ let pokemones = [
     description:
       "When it retracts its long neck into its shell, it squirts out water with vigorous force.",
     cardColor: "#6493EB",
-    hp: "044",
-    atk: "048",
-    def: "055",
-    satk: "050",
-    sdef: "064",
-    spd: "043",
+    stats: {
+      hp: "044",
+      atk: "048",
+      def: "055",
+      satk: "050",
+      sdef: "064",
+      spd: "043",
+    },
   },
   {
     id: "4",
@@ -68,12 +74,14 @@ let pokemones = [
     description:
       "In battle, it flaps its wings at great speed to release highly toxic dust into the air.",
     cardColor: "#A7B723",
-    hp: "060",
-    atk: "045",
-    def: "050",
-    satk: "090",
-    sdef: "080",
-    spd: "070",
+    stats: {
+      hp: "060",
+      atk: "045",
+      def: "050",
+      satk: "090",
+      sdef: "080",
+      spd: "070",
+    },
   },
   {
     id: "5",
@@ -87,12 +95,14 @@ let pokemones = [
     description:
       "Pikachu that can generate powerful electricity have cheek sacs that are extra soft and super stretchy.",
     cardColor: "#F9CF30",
-    hp: "035",
-    atk: "055",
-    def: "040",
-    satk: "050",
-    sdef: "050",
-    spd: "090",
+    stats: {
+      hp: "035",
+      atk: "055",
+      def: "040",
+      satk: "050",
+      sdef: "050",
+      spd: "090",
+    },
   },
   {
     id: "6",
@@ -106,12 +116,14 @@ let pokemones = [
     description:
       "Born from gases, anyone would faint if engulfed by its gaseous body, which contains poison.",
     cardColor: "#70559B",
-    hp: "030",
-    atk: "035",
-    def: "030",
-    satk: "100",
-    sdef: "035",
-    spd: "080",
+    stats: {
+      hp: "030",
+      atk: "035",
+      def: "030",
+      satk: "100",
+      sdef: "035",
+      spd: "080",
+    },
   },
   {
     id: "7",
@@ -125,12 +137,14 @@ let pokemones = [
     description:
       "It can reconstitute its entire cellular structure to change into what it sees, but it returns to normal when it relaxes.",
     cardColor: "#AAA67F",
-    hp: "048",
-    atk: "048",
-    def: "048",
-    satk: "048",
-    sdef: "048",
-    spd: "048",
+    stats: {
+      hp: "048",
+      atk: "048",
+      def: "048",
+      satk: "048",
+      sdef: "048",
+      spd: "048",
+    },
   },
   {
     id: "8",
@@ -144,12 +158,14 @@ let pokemones = [
     description:
       "When viewed through a microscope, this Pokémon’s short, fine, delicate hair can be seen.",
     cardColor: "#FB5584",
-    hp: "100",
-    atk: "100",
-    def: "100",
-    satk: "100",
-    sdef: "100",
-    spd: "100",
+    stats: {
+      hp: "100",
+      atk: "100",
+      def: "100",
+      satk: "100",
+      sdef: "100",
+      spd: "100",
+    },
   },
   {
     id: "9",
@@ -163,12 +179,14 @@ let pokemones = [
     description:
       "It eats iron ore - and sometimes railroad tracks - to build up the steel armor that protects its body.",
     cardColor: "#B7B9D0",
-    hp: "050",
-    atk: "070",
-    def: "100",
-    satk: "040",
-    sdef: "040",
-    spd: "030",
+    stats: {
+      hp: "050",
+      atk: "070",
+      def: "100",
+      satk: "040",
+      sdef: "040",
+      spd: "030",
+    },
   },
 ];
 

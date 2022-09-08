@@ -12,13 +12,13 @@ const PokemonDetails = (props) => {
           return (
             <React.Fragment key={i}>
               <main
-                className="w-full h-screen"
+                className="w-full h-full"
                 style={{ backgroundColor: pokemon.cardColor }}
               >
                 <section className="w-full h-screen">
-                  <div className="absolute z-0 flex w-full justify-between px-6 pt-6">
+                  <div className="absolute z-20 flex w-full justify-between px-6 pt-6 xl:px-32">
                     <Link to="/">
-                      <div className="cursor-pointer text-white flex items-center">
+                      <div className="cursor-pointer text-white flex items-center ">
                         <i className="fa-solid fa-arrow-left mr-4 text-2xl"></i>
                         <h1 className="text-2xl font-bold">{pokemon.name}</h1>
                       </div>
@@ -27,31 +27,31 @@ const PokemonDetails = (props) => {
                       <p className="text-white font-bold">#00{pokemon.id}</p>
                     </div>
                   </div>
-                  <div className="absolute left-[144px] top-[8px] z-0">
+                  <div className="absolute flex w-full justify-center pl-24 top-[8px] z-0">
                     <img
-                      className="opacity-10 w-[228px] h-[228px]"
-                      src="/img/pokeball.png"
+                      className="opacity-20 w-[228px] h-[228px] "
+                      src="/img/pokeballwhite.png"
                       alt="Pokeball"
                     />
                   </div>
 
                   <div
                     className={`${
-                      params.pokemonId === "1" ? "hidden" : ""
-                    } absolute flex items-center left-[24px] top-[228px] z-30`}
+                      params.pokemonId === props.pokemones[0].id ? "hidden" : ""
+                    } absolute flex items-center left-[24px] top-[228px] xl:left-[350px] xl:top-[212px] z-30`}
                   >
                     <Link to={`/pokemondetails/${prevPokemon}`}>
-                      <i className="text-white fa-solid fa-angle-left text-sm"></i>
+                      <i className="text-white fa-solid fa-angle-left text-sm sm:text-xl"></i>
                     </Link>
                   </div>
 
                   <div
                     className={`${
                       params.pokemonId >= props.pokemones.length ? "hidden" : ""
-                    } absolute flex items-center right-[24px] top-[228px] z-30`}
+                    } absolute flex items-center right-[24px] top-[228px] xl:right-[350px] xl:top-[212px] z-30`}
                   >
                     <Link to={`/pokemondetails/${nextPokemon}`}>
-                      <i className="text-white fa-solid fa-angle-right text-sm "></i>
+                      <i className="text-white fa-solid fa-angle-right text-sm sm:text-xl"></i>
                     </Link>
                   </div>
                   <div className="absolute w-full flex justify-center top-[110px] z-20">
@@ -61,8 +61,8 @@ const PokemonDetails = (props) => {
                       alt={pokemon.name}
                     />
                   </div>
-                  <div className="absolute w-full top-[259px] p-1 z-10">
-                    <div className="bg-white w-full h-2/4 rounded-lg">
+                  <div className="absolute w-full top-[259px] p-1 sm:px-3 lg:px-28 xl:px-[300px]  z-10">
+                    <div className="bg-white w-full h-2/4 rounded-lg lg:h-[300px] xl:h-[650px] xl:drop-shadow-2xl">
                       <div className="pt-14 pb-5 px-5">
                         <div className="w-full flex justify-center">
                           <span
@@ -127,11 +127,11 @@ const PokemonDetails = (props) => {
                             <p className="text-[13px] text-[#666666]">Moves</p>
                           </div>
                         </div>
-                        <div className="w-full flex mt-6">
+                        <div className="w-full flex mt-6 md:text-center lg:justify-center xl:mt-10">
                           <p>{pokemon.description}</p>
                         </div>
 
-                        <div className="w-full flex justify-center items-center mt-6">
+                        <div className="w-full flex justify-center items-center mt-6 xl:mt-10">
                           <p
                             className="font-bold text-lg"
                             style={{ color: pokemon.cardColor }}
@@ -139,84 +139,37 @@ const PokemonDetails = (props) => {
                             Base Stats
                           </p>
                         </div>
-                        <div className="mt-6 grid auto-cols-max auto-rows-max ">
-                          <div
-                            className="flex flex-col col-start-1 border-r-2 pr-3 text-right"
-                            style={{ color: pokemon.cardColor }}
-                          >
-                            <div>HP</div>
-                            <div>ATK</div>
-                            <div>DEF</div>
-                            <div>SATK</div>
-                            <div>SDEF</div>
-                            <div>SPD</div>
-                          </div>
-                          <div className="flex flex-row col-start-2 ml-2 text-right">
-                            <div className="flex flex-col">
-                              <div>{pokemon.hp}</div>
-                              <div>{pokemon.atk}</div>
-                              <div>{pokemon.def}</div>
-                              <div>{pokemon.satk}</div>
-                              <div>{pokemon.sdef}</div>
-                              <div>{pokemon.spd}</div>
-                            </div>
-                            <div className="flex flex-col items-center justify-around ml-2 w-full">
-                              <div className="w-60 bg-gray-200 rounded-full h-2.5   row-start-1">
-                                <div
-                                  className=" h-2.5 rounded-full"
-                                  style={{
-                                    width: `${pokemon.hp / 2}%`,
-                                    backgroundColor: pokemon.cardColor,
-                                  }}
-                                ></div>
-                              </div>
-                              <div className="w-full bg-gray-200 rounded-full h-2.5   row-start-2">
-                                <div
-                                  className=" h-2.5 rounded-full"
-                                  style={{
-                                    width: `${pokemon.atk / 2}%`,
-                                    backgroundColor: pokemon.cardColor,
-                                  }}
-                                ></div>
-                              </div>
-                              <div className="w-full bg-gray-200 rounded-full h-2.5   row-start-3">
-                                <div
-                                  className=" h-2.5 rounded-full"
-                                  style={{
-                                    width: `${pokemon.def / 2}%`,
-                                    backgroundColor: pokemon.cardColor,
-                                  }}
-                                ></div>
-                              </div>
-                              <div className="w-full bg-gray-200 rounded-full h-2.5  row-start-4">
-                                <div
-                                  className=" h-2.5 rounded-full"
-                                  style={{
-                                    width: `${pokemon.satk / 2}%`,
-                                    backgroundColor: pokemon.cardColor,
-                                  }}
-                                ></div>
-                              </div>
-                              <div className="w-full bg-gray-200 rounded-full h-2.5  row-start-5">
-                                <div
-                                  className=" h-2.5 rounded-full"
-                                  style={{
-                                    width: `${pokemon.sdef / 2}%`,
-                                    backgroundColor: pokemon.cardColor,
-                                  }}
-                                ></div>
-                              </div>
-                              <div className="w-full bg-gray-200 rounded-full h-2.5  row-start-6">
-                                <div
-                                  className=" h-2.5 rounded-full"
-                                  style={{
-                                    width: `${pokemon.spd / 2}%`,
-                                    backgroundColor: pokemon.cardColor,
-                                  }}
-                                ></div>
-                              </div>
-                            </div>
-                          </div>
+                        <div className="mt-6 xl:mt-12 grid auto-cols-max auto-rows-max sm:justify-center ">
+                          {Object.entries(pokemon.stats).map(
+                            ([key, value, i]) => {
+                              return (
+                                <React.Fragment>
+                                  <div
+                                    key={i}
+                                    className="flex flex-col col-start-1 border-r-2 pr-3 text-right"
+                                    style={{ color: pokemon.cardColor }}
+                                  >
+                                    <div>{key.toUpperCase()}</div>
+                                  </div>
+                                  <div className="flex flex-row col-start-2 ml-2 text-right">
+                                    <div className="flex flex-col">
+                                      <div>{value}</div>
+                                    </div>
+                                  </div>
+
+                                  <div className="w-60 sm:w-96 bg-gray-200 col-start-3 rounded-full h-2.5 ml-1 mt-[6px]">
+                                    <div
+                                      className=" h-2.5 rounded-full"
+                                      style={{
+                                        width: `${value / 2}%`,
+                                        backgroundColor: pokemon.cardColor,
+                                      }}
+                                    ></div>
+                                  </div>
+                                </React.Fragment>
+                              );
+                            }
+                          )}
                         </div>
                       </div>
                     </div>
@@ -225,6 +178,8 @@ const PokemonDetails = (props) => {
               </main>
             </React.Fragment>
           );
+        } else {
+          <p>No se encontro pokemon</p>;
         }
       })}
     </React.Fragment>

@@ -9,7 +9,7 @@ const Buscador = ({ setPokemonesActuales, pokemones }) => {
   };
   return (
     <>
-      <div className="px-[16px]">
+      <div className="px-[16px] sm:px-[38px] xl:px-[500px]">
         <input
           className="w-full text-center mt-8 px-4 py-2 h-10 rounded-lg border-2 border-gray-300 focus:outline-none focus:border-gray-500"
           type="text"

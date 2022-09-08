@@ -7,6 +7,7 @@ function App() {
   const pokemones = getpokemones();
   return (
     <Routes>
+      <Route path="*" element={<NotFound />}></Route>
       <Route path="/" element={<Home pokemones={pokemones} />} />
       <Route
         path="/pokemondetails"
@@ -14,7 +15,6 @@ function App() {
       >
         <Route path=":pokemonId" element={<PokemonDetails />} />
       </Route>
-      <Route path="*" element={<NotFound />}></Route>
     </Routes>
   );
 }
