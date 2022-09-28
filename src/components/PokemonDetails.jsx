@@ -13,7 +13,7 @@ const PokemonDetails = (props) => {
             <React.Fragment key={i}>
               <main
                 className="w-full h-full"
-                style={{ backgroundColor: pokemon.cardColor }}
+                style={{ backgroundColor: pokemon.cardcolor }}
               >
                 <section className="w-full h-screen">
                   <div className="absolute z-20 flex w-full justify-between px-6 pt-6 xl:px-32">
@@ -85,7 +85,7 @@ const PokemonDetails = (props) => {
                         <div className="w-full flex justify-center items-center mt-7">
                           <p
                             className="font-bold text-lg"
-                            style={{ color: pokemon.cardColor }}
+                            style={{ color: pokemon.cardcolor }}
                           >
                             About
                           </p>
@@ -134,42 +134,97 @@ const PokemonDetails = (props) => {
                         <div className="w-full flex justify-center items-center mt-6 xl:mt-10">
                           <p
                             className="font-bold text-lg"
-                            style={{ color: pokemon.cardColor }}
+                            style={{ color: pokemon.cardcolor }}
                           >
                             Base Stats
                           </p>
                         </div>
                         <div className="mt-6 xl:mt-12 grid auto-cols-max auto-rows-max sm:justify-center ">
-                          {Object.entries(pokemon.stats).map(
-                            ([key, value, i]) => {
-                              return (
-                                <React.Fragment>
+                          
                                   <div
                                     key={i}
                                     className="flex flex-col col-start-1 border-r-2 pr-3 text-right"
-                                    style={{ color: pokemon.cardColor }}
+                                    style={{ color: pokemon.cardcolor }}
                                   >
-                                    <div>{key.toUpperCase()}</div>
+                                    <div>HP</div>
+                                    <div>ATK</div>
+                                    <div>DEF</div>
+                                    <div>SATK</div>
+                                    <div>SDEF</div>
+                                    <div>SPD</div>
                                   </div>
                                   <div className="flex flex-row col-start-2 ml-2 text-right">
                                     <div className="flex flex-col">
-                                      <div>{value}</div>
+                                      <div>{pokemon.hp}</div>
+                                      <div>{pokemon.atk}</div>
+                                      <div>{pokemon.def}</div>
+                                      <div>{pokemon.satk}</div>
+                                      <div>{pokemon.sdef}</div>
+                                      <div>{pokemon.spd}</div>
                                     </div>
                                   </div>
-
-                                  <div className="w-60 sm:w-96 bg-gray-200 col-start-3 rounded-full h-2.5 ml-1 mt-[6px]">
+                                  <div className="flex flex-col col-start-3 justify-around items-center">
+                                  <div className="w-60 sm:w-96 bg-gray-200 rounded-full h-2.5 ml-1">
                                     <div
                                       className=" h-2.5 rounded-full"
                                       style={{
-                                        width: `${value / 2}%`,
-                                        backgroundColor: pokemon.cardColor,
+                                        width: `${pokemon.hp / 2}%`,
+                                        backgroundColor: pokemon.cardcolor,
                                       }}
-                                    ></div>
+                                    >
+                                    </div>
                                   </div>
-                                </React.Fragment>
-                              );
-                            }
-                          )}
+                                  <div className="w-60 sm:w-96 bg-gray-200 rounded-full h-2.5 ml-1 ">
+                                    <div
+                                      className=" h-2.5 rounded-full"
+                                      style={{
+                                        width: `${pokemon.atk / 2}%`,
+                                        backgroundColor: pokemon.cardcolor,
+                                      }}
+                                    >
+                                    </div>
+                                  </div>
+                                  <div className="w-60 sm:w-96 bg-gray-200 rounded-full h-2.5 ml-1 ">
+                                    <div
+                                      className=" h-2.5 rounded-full"
+                                      style={{
+                                        width: `${pokemon.def / 2}%`,
+                                        backgroundColor: pokemon.cardcolor,
+                                      }}
+                                    >
+                                    </div>
+                                  </div>
+                                  <div className="w-60 sm:w-96 bg-gray-200   rounded-full h-2.5 ml-1 ">
+                                    <div
+                                      className=" h-2.5 rounded-full"
+                                      style={{
+                                        width: `${pokemon.satk / 2}%`,
+                                        backgroundColor: pokemon.cardcolor,
+                                      }}
+                                    >
+                                    </div>
+                                  </div>
+                                  <div className="w-60 sm:w-96 bg-gray-200  rounded-full h-2.5 ml-1 ">
+                                    <div
+                                      className=" h-2.5 rounded-full"
+                                      style={{
+                                        width: `${pokemon.sdef / 2}%`,
+                                        backgroundColor: pokemon.cardcolor,
+                                      }}
+                                    >
+                                    </div>
+                                  </div>
+                                  <div className="w-60 sm:w-96 bg-gray-200 rounded-full h-2.5 ml-1 ">
+                                    <div
+                                      className=" h-2.5 rounded-full"
+                                      style={{
+                                        width: `${pokemon.spd / 2}%`,
+                                        backgroundColor: pokemon.cardcolor,
+                                      }}
+                                    >
+                                    </div>
+                                  </div>
+                                  </div>
                         </div>
                       </div>
                     </div>

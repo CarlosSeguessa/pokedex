@@ -11,14 +11,12 @@ let pokemones = [
     description:
       "There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger.",
     cardColor: "#74CB48",
-    stats: {
-      hp: "045",
-      atk: "045",
-      def: "049",
-      satk: "065",
-      sdef: "065",
-      spd: "045",
-    },
+    hp: "045",
+    atk: "045",
+    def: "049",
+    satk: "065",
+    sdef: "065",
+    spd: "045",
   },
   {
     id: "2",

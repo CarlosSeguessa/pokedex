@@ -24,10 +24,10 @@ const PokemonCard = (props) => {
           xl:hover:-translate-y-1
           xl:duration-300
           "
-          style={{ borderColor: pokemon.cardColor }}
+          style={{ borderColor: pokemon.cardcolor }}
         >
           <div className="w-full flex justify-end pr-2">
-            <p style={{ color: pokemon.cardColor }}>#00{pokemon.id}</p>
+            <p style={{ color: pokemon.cardcolor }}>#00{pokemon.id}</p>
           </div>
           <div className="w-full flex justify-center items-center xl:mt-4">
             <img
@@ -38,7 +38,7 @@ const PokemonCard = (props) => {
           </div>
           <div
             className="w-full  rounded-b-lg xl:mt-6"
-            style={{ backgroundColor: pokemon.cardColor }}
+            style={{ backgroundColor: pokemon.cardcolor }}
           >
             <p className="text-center text-white">{pokemon.name}</p>
           </div>

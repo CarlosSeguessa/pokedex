@@ -1,10 +1,39 @@
+
+import { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
 import PokemonDetails from "./components/PokemonDetails";
 import NotFound from "./components/NotFound";
-import { getpokemones } from "./data/pokemones";
+
 function App() {
-  const pokemones = getpokemones();
+
+ //traer pokemones desde mi api
+  const [pokemones, setPokemones] = useState([]);
+  
+  const getpokemones = async () => {
+    try {
+      const response = await fetch("http://localhost:3000/api/pokemones");
+
+      if (!response.ok) {
+        throw new Error("Error en la peticion");
+      }
+        const responsefetch = await response.json();
+      
+        setPokemones(responsefetch.data);
+        console.log(pokemones)
+        
+      }catch (error) {
+      console.error(error)
+    }
+  };
+    
+
+useEffect(() => {
+    getpokemones();
+}, []);
+
+
+
   return (
     <Routes>
       <Route path="*" element={<NotFound />}></Route>
