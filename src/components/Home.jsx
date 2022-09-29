@@ -2,6 +2,7 @@ import React from "react";
 import Pokemones from "./Pokemones";
 import Buscador from "./Buscador";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 const Home = ({ pokemones }) => {
   const [newlist, setNewList] = useState(pokemones);
   const [flag, setFlag] = useState(true);
@@ -28,6 +29,11 @@ const Home = ({ pokemones }) => {
           <div className="flex items-center  mt-9">
             <img className="w-10 mr-4" src="/img/Pokeball.png" alt="Pokeball" />
             <h1 className="font-bold text-3xl">Pokédex</h1>
+            <div className="flex items-center pl-10 flex-wrap">
+              <Link to="/login" className="w-30 text-white bg-red-500 rounded-lg px-5">
+                Login
+              </Link>
+            </div>
           </div>
           <button onClick={ordenar}>
             <div className="mt-8 flex h-1 items-center justify-center">
