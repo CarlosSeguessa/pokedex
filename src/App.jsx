@@ -4,7 +4,9 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
 import PokemonDetails from "./components/PokemonDetails";
 import NotFound from "./components/NotFound";
-import AddPokemon from "./components/AddPokemon";
+import Login from "./components/Login";
+import Register from "./components/Register";
+//import AddPokemon from "./components/AddPokemon";
 
 function App() {
 
@@ -60,7 +62,9 @@ if (loading) {
       >
         <Route path=":pokemonId" element={<PokemonDetails />} />
       </Route>
-      <Route path="/addpokemon" element={<AddPokemon />} />
+      {/*<Route path="/addpokemon" element={<AddPokemon />} />*/}
+      <Route path="/login"  element={<Login />} />
+      <Route path="/register" element= {<Register/>}/>
     </Routes>
   );
 }

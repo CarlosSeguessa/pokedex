@@ -1,11 +1,17 @@
 import React, { useState } from "react";
-
+import { Link } from "react-router-dom";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const setJwt = async () => {
+  const loginUsuario = async () => {
     try {
+
+      if (email === "" || password === "") {
+        alert("Todos los campos son obligatorios");
+        return;
+      }
+
       const respuesta = await fetch("http://localhost:3000/auth/login", {
         method: "POST",
         headers: {
@@ -34,7 +40,7 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setJwt();
+    loginUsuario();
   };
 
   return (
@@ -52,16 +58,18 @@ const Login = () => {
           </div>
           <div className="flex justify-center">
             <input
+              placeholder="Email"
               className="w-[340px] px-3 py-1.5 bg-white border border-gray-300 focus:border-blue-600 focus:outline-none rounded mb-2"
               email="user"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              type="text"
+              type="email"
             />
           </div>
           <div className="flex justify-center">
             <input
-              class="w-[340px] px-3 py-1.5 bg-white border border-gray-300 focus:border-blue-600 focus:outline-none rounded mb-2"
+              placeholder="Contraseña"
+              className="w-[340px] px-3 py-1.5 bg-white border border-gray-300 focus:border-blue-600 focus:outline-none rounded mb-2"
               email="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -72,6 +80,9 @@ const Login = () => {
             <button className="w-[340px] rounded bg-[#cb99c9] px-3 py-1.5 text-white text-center">
               Log In
             </button>
+          </div>
+          <div className=" w-full flex justify-center mt-3">
+            <Link to="/register" className="w-[340px] rounded bg-blue-500 px-3 py-1.5 text-white text-center">Sign Up</Link>
           </div>
           <div className="flex justify-center mt-2">
             <div className="w-[340px] h-[1px] bg-[#808080]"></div>
