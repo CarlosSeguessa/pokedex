@@ -1,7 +1,6 @@
 import React from "react";
 
 const Buscador = ({ setPokemonesActuales, pokemones }) => {
-  console.log(pokemones);
   const filtrarPokemon = (e) => {
     const listaFiltrada = pokemones.filter((pokemon) => {
       return pokemon.name.toLowerCase().includes(e.target.value.toLowerCase());

@@ -22,6 +22,10 @@ const Home = ({ pokemones }) => {
     setFlag(!flag);
   };
 
+  const logOut = () => {
+    localStorage.removeItem("token");
+    window.location.reload();
+  };
   return (
     <>
       <header className="w-full flex flex-col">
@@ -29,10 +33,22 @@ const Home = ({ pokemones }) => {
           <div className="flex items-center  mt-9">
             <img className="w-10 mr-4" src="/img/Pokeball.png" alt="Pokeball" />
             <h1 className="font-bold text-3xl">Pokédex</h1>
-            <div className="flex items-center pl-10 flex-wrap">
-              <Link to="/login" className="w-30 text-white bg-red-500 rounded-lg px-5">
-                Login
-              </Link>
+            <div className="flex items-center pl-8 flex-wrap">
+              {localStorage.getItem("token") == null ? (
+                <Link
+                  to="/login"
+                  className="w-30 text-white bg-red-500 rounded-lg px-5"
+                >
+                  Log in
+                </Link>
+              ) : (
+                <button
+                  onClick={logOut}
+                  className="w-30 text-white bg-red-500 rounded-lg px-5"
+                >
+                  Log out
+                </button>
+              )}
             </div>
           </div>
           <button onClick={ordenar}>

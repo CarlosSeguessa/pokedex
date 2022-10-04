@@ -3,7 +3,7 @@ let pokemones = [
     id: "1",
     img: "/img/bulbasaur.png",
     name: "Bulbasaur",
-    type1: ["Grass", "#74CB48"],
+    type1: ["Grass", "#74CB48", 1],
     type2: ["Poison", "#A43E9E"],
     height: "0.7",
     weight: "6.9",

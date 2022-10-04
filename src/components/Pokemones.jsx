@@ -1,4 +1,4 @@
-import React from "react";
+import { React } from "react";
 import { Outlet } from "react-router-dom";
 import PokemonCard from "./PokemonCard";
 const Pokemones = ({ pokemonesActuales, pokemones }) => {

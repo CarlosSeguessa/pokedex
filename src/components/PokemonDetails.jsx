@@ -65,20 +65,14 @@ const PokemonDetails = (props) => {
                     <div className="bg-white w-full h-2/4 rounded-lg lg:h-[300px] xl:h-[650px] xl:drop-shadow-2xl">
                       <div className="pt-14 pb-5 px-5">
                         <div className="w-full flex justify-center">
-                          <span
-                            className="min-w-[55px] min-h-[20px] text-center rounded-xl text-white font-bold flex items-center justify-center px-3"
-                            style={{ backgroundColor: pokemon.type1[1] }}
-                          >
-                            {pokemon.type1[0]}
+                          <span className="min-w-[55px] min-h-[20px] text-center rounded-xl text-black font-bold flex items-center justify-center px-3">
+                            {pokemon.type1}
                           </span>
-                          {pokemon.type2[0] === null ? (
+                          {pokemon.type2 === null ? (
                             ""
                           ) : (
-                            <span
-                              className="min-w-[55px] min-h-[20px] text-center rounded-xl text-white font-bold flex items-center justify-center px-3 ml-4"
-                              style={{ backgroundColor: pokemon.type2[1] }}
-                            >
-                              {pokemon.type2[0]}
+                            <span className="min-w-[55px] min-h-[20px] text-center rounded-xl text-black font-bold flex items-center justify-center px-3 ml-4">
+                              {pokemon.type2}
                             </span>
                           )}
                         </div>
@@ -140,91 +134,84 @@ const PokemonDetails = (props) => {
                           </p>
                         </div>
                         <div className="mt-6 xl:mt-12 grid auto-cols-max auto-rows-max sm:justify-center ">
-                          
-                                  <div
-                                    key={i}
-                                    className="flex flex-col col-start-1 border-r-2 pr-3 text-right"
-                                    style={{ color: pokemon.cardcolor }}
-                                  >
-                                    <div>HP</div>
-                                    <div>ATK</div>
-                                    <div>DEF</div>
-                                    <div>SATK</div>
-                                    <div>SDEF</div>
-                                    <div>SPD</div>
-                                  </div>
-                                  <div className="flex flex-row col-start-2 ml-2 text-right">
-                                    <div className="flex flex-col">
-                                      <div>{pokemon.hp}</div>
-                                      <div>{pokemon.atk}</div>
-                                      <div>{pokemon.def}</div>
-                                      <div>{pokemon.satk}</div>
-                                      <div>{pokemon.sdef}</div>
-                                      <div>{pokemon.spd}</div>
-                                    </div>
-                                  </div>
-                                  <div className="flex flex-col col-start-3 justify-around items-center">
-                                  <div className="w-60 sm:w-96 bg-gray-200 rounded-full h-2.5 ml-1">
-                                    <div
-                                      className=" h-2.5 rounded-full"
-                                      style={{
-                                        width: `${pokemon.hp / 2}%`,
-                                        backgroundColor: pokemon.cardcolor,
-                                      }}
-                                    >
-                                    </div>
-                                  </div>
-                                  <div className="w-60 sm:w-96 bg-gray-200 rounded-full h-2.5 ml-1 ">
-                                    <div
-                                      className=" h-2.5 rounded-full"
-                                      style={{
-                                        width: `${pokemon.atk / 2}%`,
-                                        backgroundColor: pokemon.cardcolor,
-                                      }}
-                                    >
-                                    </div>
-                                  </div>
-                                  <div className="w-60 sm:w-96 bg-gray-200 rounded-full h-2.5 ml-1 ">
-                                    <div
-                                      className=" h-2.5 rounded-full"
-                                      style={{
-                                        width: `${pokemon.def / 2}%`,
-                                        backgroundColor: pokemon.cardcolor,
-                                      }}
-                                    >
-                                    </div>
-                                  </div>
-                                  <div className="w-60 sm:w-96 bg-gray-200   rounded-full h-2.5 ml-1 ">
-                                    <div
-                                      className=" h-2.5 rounded-full"
-                                      style={{
-                                        width: `${pokemon.satk / 2}%`,
-                                        backgroundColor: pokemon.cardcolor,
-                                      }}
-                                    >
-                                    </div>
-                                  </div>
-                                  <div className="w-60 sm:w-96 bg-gray-200  rounded-full h-2.5 ml-1 ">
-                                    <div
-                                      className=" h-2.5 rounded-full"
-                                      style={{
-                                        width: `${pokemon.sdef / 2}%`,
-                                        backgroundColor: pokemon.cardcolor,
-                                      }}
-                                    >
-                                    </div>
-                                  </div>
-                                  <div className="w-60 sm:w-96 bg-gray-200 rounded-full h-2.5 ml-1 ">
-                                    <div
-                                      className=" h-2.5 rounded-full"
-                                      style={{
-                                        width: `${pokemon.spd / 2}%`,
-                                        backgroundColor: pokemon.cardcolor,
-                                      }}
-                                    >
-                                    </div>
-                                  </div>
-                                  </div>
+                          <div
+                            key={i}
+                            className="flex flex-col col-start-1 border-r-2 pr-3 text-right"
+                            style={{ color: pokemon.cardcolor }}
+                          >
+                            <div>HP</div>
+                            <div>ATK</div>
+                            <div>DEF</div>
+                            <div>SATK</div>
+                            <div>SDEF</div>
+                            <div>SPD</div>
+                          </div>
+                          <div className="flex flex-row col-start-2 ml-2 text-right">
+                            <div className="flex flex-col">
+                              <div>{pokemon.hp}</div>
+                              <div>{pokemon.atk}</div>
+                              <div>{pokemon.def}</div>
+                              <div>{pokemon.satk}</div>
+                              <div>{pokemon.sdef}</div>
+                              <div>{pokemon.spd}</div>
+                            </div>
+                          </div>
+                          <div className="flex flex-col col-start-3 justify-around items-center">
+                            <div className="w-60 sm:w-96 bg-gray-200 rounded-full h-2.5 ml-1">
+                              <div
+                                className=" h-2.5 rounded-full"
+                                style={{
+                                  width: `${pokemon.hp / 2}%`,
+                                  backgroundColor: pokemon.cardcolor,
+                                }}
+                              ></div>
+                            </div>
+                            <div className="w-60 sm:w-96 bg-gray-200 rounded-full h-2.5 ml-1 ">
+                              <div
+                                className=" h-2.5 rounded-full"
+                                style={{
+                                  width: `${pokemon.atk / 2}%`,
+                                  backgroundColor: pokemon.cardcolor,
+                                }}
+                              ></div>
+                            </div>
+                            <div className="w-60 sm:w-96 bg-gray-200 rounded-full h-2.5 ml-1 ">
+                              <div
+                                className=" h-2.5 rounded-full"
+                                style={{
+                                  width: `${pokemon.def / 2}%`,
+                                  backgroundColor: pokemon.cardcolor,
+                                }}
+                              ></div>
+                            </div>
+                            <div className="w-60 sm:w-96 bg-gray-200   rounded-full h-2.5 ml-1 ">
+                              <div
+                                className=" h-2.5 rounded-full"
+                                style={{
+                                  width: `${pokemon.satk / 2}%`,
+                                  backgroundColor: pokemon.cardcolor,
+                                }}
+                              ></div>
+                            </div>
+                            <div className="w-60 sm:w-96 bg-gray-200  rounded-full h-2.5 ml-1 ">
+                              <div
+                                className=" h-2.5 rounded-full"
+                                style={{
+                                  width: `${pokemon.sdef / 2}%`,
+                                  backgroundColor: pokemon.cardcolor,
+                                }}
+                              ></div>
+                            </div>
+                            <div className="w-60 sm:w-96 bg-gray-200 rounded-full h-2.5 ml-1 ">
+                              <div
+                                className=" h-2.5 rounded-full"
+                                style={{
+                                  width: `${pokemon.spd / 2}%`,
+                                  backgroundColor: pokemon.cardcolor,
+                                }}
+                              ></div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
