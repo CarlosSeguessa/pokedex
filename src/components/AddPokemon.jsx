@@ -51,30 +51,33 @@ const AddPokemon = () => {
         return;
       }
 
-      const response = await fetch("http://localhost:3000/api/pokemones", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "auth-token": localStorage.getItem("token"),
-        },
-        body: JSON.stringify({
-          name: name,
-          img: image,
-          type1: type1,
-          type2: type2,
-          height: height,
-          weight: weight,
-          moves: [move],
-          description: description,
-          cardcolor: cardColor,
-          hp: hp,
-          atk: attack,
-          def: defense,
-          satk: specialAttack,
-          sdef: specialDefense,
-          spd: speed,
-        }),
-      });
+      const response = await fetch(
+        "https://pokedex-back-production-18ab.up.railway.app/api/pokemones",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "auth-token": localStorage.getItem("token"),
+          },
+          body: JSON.stringify({
+            name: name,
+            img: image,
+            type1: type1,
+            type2: type2,
+            height: height,
+            weight: weight,
+            moves: [move],
+            description: description,
+            cardcolor: cardColor,
+            hp: hp,
+            atk: attack,
+            def: defense,
+            satk: specialAttack,
+            sdef: specialDefense,
+            spd: speed,
+          }),
+        }
+      );
 
       if (!response.ok) {
         const error = await response.json();
