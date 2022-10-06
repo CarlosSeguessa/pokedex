@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getPokemones } from "../data/api";
+import Loading from "./Loading/Loading";
 
 const PokemonDetails = () => {
   const [pokemones, setPokemones] = useState([]);
@@ -25,7 +26,7 @@ const PokemonDetails = () => {
   return (
     <>
       {loading ? (
-        <h1>Loading....</h1>
+        <Loading />
       ) : (
         pokemones.map((pokemon, i) => {
           if (pokemon.id === params.pokemonId) {
@@ -44,7 +45,7 @@ const PokemonDetails = () => {
                         </div>
                       </Link>
                       <div className="flex items-center">
-                        <p className="text-white font-bold">#00{pokemon.id}</p>
+                        <p className="text-white font-bold">#{pokemon.id}</p>
                       </div>
                     </div>
                     <div className="absolute flex w-full justify-center pl-24 top-[8px] z-0">

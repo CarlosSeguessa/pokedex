@@ -27,13 +27,14 @@ const Home = () => {
   const ordenar = () => {
     let sortedList;
     if (flag) {
-      sortedList = [...newList].sort((a, b) =>
-        a.name > b.name ? 1 : a.name < b.name ? -1 : 0
-      );
-    } else {
-      sortedList = [...newList].sort((a, b) =>
-        a.id > b.id ? 1 : a.id < b.id ? -1 : 0
-      );
+      sortedList = newList.sort((a, b) => {
+        return a.name.localeCompare(b.name);
+      });
+    }
+    if (!flag) {
+      sortedList = newList.sort((a, b) => {
+        return a.id - b.id;
+      });
     }
     setNewList(sortedList);
     setFlag(!flag);
