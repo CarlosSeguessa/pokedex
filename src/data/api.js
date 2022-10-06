@@ -1,10 +1,13 @@
 const getPokemones = async () => {
   try {
-    const response = await fetch("http://localhost:3000/api/pokemones", {
-      headers: {
-        "auth-token": localStorage.getItem("token"),
-      },
-    });
+    const response = await fetch(
+      "pokedex-back-production-18ab.up.railway.app/api/pokemones",
+      {
+        headers: {
+          "auth-token": localStorage.getItem("token"),
+        },
+      }
+    );
     const data = await response.json();
     return data.data;
   } catch (error) {

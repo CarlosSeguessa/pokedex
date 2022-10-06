@@ -21,17 +21,20 @@ const Register = () => {
         return;
       }
 
-      const response = await fetch("http://localhost:3000/auth/registro", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: user,
-          mail: email,
-          password: password,
-        }),
-      });
+      const response = await fetch(
+        "pokedex-back-production-18ab.up.railway.app/auth/registro",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: user,
+            mail: email,
+            password: password,
+          }),
+        }
+      );
 
       if (!response.ok) {
         const error = await response.json();

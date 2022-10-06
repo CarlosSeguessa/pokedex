@@ -24,16 +24,19 @@ const Login = () => {
 
       // si el usuario existe, pero la contraseña no coincide, no se puede loguear
 
-      const respuesta = await fetch("http://localhost:3000/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          mail: email,
-          password: password,
-        }),
-      });
+      const respuesta = await fetch(
+        "pokedex-back-production-18ab.up.railway.app/auth/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            mail: email,
+            password: password,
+          }),
+        }
+      );
 
       if (!respuesta.ok) {
         const error = await respuesta.json();
