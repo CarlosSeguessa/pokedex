@@ -22,7 +22,7 @@ const Register = () => {
       }
 
       const response = await fetch(
-        "pokedex-back-production-18ab.up.railway.app/auth/registro",
+        "https://pokedex-back-production-18ab.up.railway.app/auth/registro",
         {
           method: "POST",
           headers: {

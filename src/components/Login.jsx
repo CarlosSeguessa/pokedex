@@ -25,7 +25,7 @@ const Login = () => {
       // si el usuario existe, pero la contraseña no coincide, no se puede loguear
 
       const respuesta = await fetch(
-        "pokedex-back-production-18ab.up.railway.app/auth/login",
+        "https://pokedex-back-production-18ab.up.railway.app/auth/login",
         {
           method: "POST",
           headers: {

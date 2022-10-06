@@ -1,7 +1,7 @@
 const getPokemones = async () => {
   try {
     const response = await fetch(
-      "pokedex-back-production-18ab.up.railway.app/api/pokemones",
+      "https://pokedex-back-production-18ab.up.railway.app/api/pokemones",
       {
         headers: {
           "auth-token": localStorage.getItem("token"),
