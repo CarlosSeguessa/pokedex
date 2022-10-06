@@ -55,6 +55,7 @@ const AddPokemon = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "auth-token": localStorage.getItem("token"),
         },
         body: JSON.stringify({
           name: name,
@@ -196,7 +197,6 @@ const AddPokemon = () => {
                 className="block text-gray-700 text-sm font-bold mb-2"
                 htmlFor="type2"
               >
-                {console.log(type1)}
                 Choose a second type:
               </label>
               <select

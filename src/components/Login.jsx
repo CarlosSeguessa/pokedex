@@ -70,13 +70,15 @@ const Login = () => {
 
   return (
     <>
-      <div className="flex justify-center items-center w-full bg-cover h-screen bg-[url(https://i.pinimg.com/originals/59/55/db/5955dbc72f5e4c1d800196d596d547aa.jpg)]">
+      <div className="flex justify-center items-center w-full bg-contain bg-no-repeat h-screen bg-[url(/img/WALLPAPAER.png)]">
         <form
           className=" w-[400px] h-[560px] bg-white rounded-md mx-3"
           onSubmit={handleSubmit}
         >
           <div className="w-full flex justify-center items-center">
-            <div className=" w-[180px] h-[180px] bg-black mb-5 rounded-full mt-10 "></div>
+            <div className=" w-[180px] h-[180px] bg-black mb-5 rounded-full mt-10 flex justify-center items-center ">
+              <img src="/img/charizard.png" className="w-[180px] h-[180px]" />
+            </div>
           </div>
           <div className="text-xl font-semibold flex justify-center mb-5">
             Welcome to the pokedex

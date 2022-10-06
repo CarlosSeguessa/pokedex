@@ -1,25 +1,55 @@
 import React from "react";
 import Pokemones from "./Pokemones";
 import Buscador from "./Buscador";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-const Home = ({ pokemones }) => {
-  const [newlist, setNewList] = useState(pokemones);
+import { getPokemones } from "../data/api";
+import Loading from "./Loading/Loading";
+const Home = () => {
+  const [pokemones, setPokemones] = useState([]);
+  const [newList, setNewList] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [flag, setFlag] = useState(true);
+  const obtenerPokemones = async () => {
+    try {
+      const response = await getPokemones();
+      setPokemones(response);
+      setNewList(response);
+      setLoading(false);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  useEffect(() => {
+    obtenerPokemones();
+  }, []);
 
   const ordenar = () => {
     let sortedList;
     if (flag) {
-      sortedList = [...newlist].sort((a, b) =>
+      sortedList = [...newList].sort((a, b) =>
         a.name > b.name ? 1 : a.name < b.name ? -1 : 0
       );
     } else {
-      sortedList = [...newlist].sort((a, b) =>
+      sortedList = [...newList].sort((a, b) =>
         a.id > b.id ? 1 : a.id < b.id ? -1 : 0
       );
     }
     setNewList(sortedList);
     setFlag(!flag);
+  };
+
+  const filtrarPokemon = (value) => {
+    if (value === "") {
+      setNewList(pokemones);
+      return;
+    }
+    const pokemonesClone = [...pokemones];
+    const listaFiltrada = pokemonesClone.filter((pokemon) => {
+      return pokemon.name.toLowerCase().includes(value.toLowerCase());
+    });
+
+    setNewList(listaFiltrada);
   };
 
   const logOut = () => {
@@ -33,7 +63,7 @@ const Home = ({ pokemones }) => {
           <div className="flex items-center  mt-9">
             <img className="w-10 mr-4" src="/img/Pokeball.png" alt="Pokeball" />
             <h1 className="font-bold text-3xl">Pokédex</h1>
-            <div className="flex items-center pl-8 flex-wrap">
+            <div className="flex items-center pl-6 flex-wrap">
               {localStorage.getItem("token") == null ? (
                 <Link
                   to="/login"
@@ -69,13 +99,9 @@ const Home = ({ pokemones }) => {
             </div>
           </button>
         </div>
-        <Buscador
-          pokemones={pokemones}
-          pokemonesActuales={newlist}
-          setPokemonesActuales={setNewList}
-        />
+        {loading ? <Loading /> : <Buscador filtrarPokemon={filtrarPokemon} />}
       </header>
-      <Pokemones pokemones={newlist} />
+      <Pokemones pokemones={newList} loading={loading} />
     </>
   );
 };

@@ -1,8 +1,9 @@
 import { React, useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const Register = () => {
+  const navigateTo = useNavigate();
   const [user, setUser] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -20,7 +21,7 @@ const Register = () => {
         return;
       }
 
-      const respuesta = await fetch("http://localhost:3000/auth/registro", {
+      const response = await fetch("http://localhost:3000/auth/registro", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -32,12 +33,12 @@ const Register = () => {
         }),
       });
 
-      if (!respuesta.ok) {
-        const error = await respuesta.json();
+      if (!response.ok) {
+        const error = await response.json();
         throw new Error(error.message);
       }
 
-      const auth = await respuesta.json();
+      const auth = await response.json();
 
       Swal.fire({
         position: "top-end",
@@ -47,7 +48,7 @@ const Register = () => {
         timer: 1200,
       });
 
-      localStorage.setItem("token", auth.token);
+      navigateTo("/login");
     } catch (error) {
       Swal.fire({
         position: "top-end",
@@ -72,7 +73,9 @@ const Register = () => {
           onSubmit={handleSubmit}
         >
           <div className="w-full flex justify-center items-center">
-            <div className=" w-[180px] h-[180px] bg-black mb-5 rounded-full mt-10 "></div>
+            <div className=" w-[180px] h-[180px] bg-black mb-5 rounded-full mt-10 ">
+              <img src="/img/charizard.png" className="w-[180px] h-[180px]" />
+            </div>
           </div>
           <div className="w-full flex flex-col justify-center">
             <label className="pl-8" htmlFor="">
