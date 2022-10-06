@@ -70,7 +70,7 @@ const Register = () => {
 
   return (
     <>
-      <div className="flex justify-center items-center w-full bg-cover h-screen bg-[url(https://i.pinimg.com/originals/59/55/db/5955dbc72f5e4c1d800196d596d547aa.jpg)]">
+      <div className="flex justify-center items-center w-full bg-cover h-screen bg-no-repeat bg-center bg-[url(/img/WALLPAPAER.png)] lg:bg-center lg:bg-cover lg:bg-[url(/img/1240x800_wallpaper.png)]">
         <form
           className=" w-[400px] h-[600px] bg-white rounded-md mx-3"
           onSubmit={handleSubmit}
@@ -81,9 +81,6 @@ const Register = () => {
             </div>
           </div>
           <div className="w-full flex flex-col justify-center">
-            <label className="pl-8" htmlFor="">
-              User:
-            </label>
             <input
               id="user"
               placeholder="User"
@@ -95,9 +92,6 @@ const Register = () => {
             />
           </div>
           <div className="w-full flex flex-col justify-center">
-            <label className="pl-8" htmlFor="">
-              Email:
-            </label>
             <input
               placeholder="example@mail.com"
               className="self-center w-[340px] px-3 py-1.5 bg-white border border-gray-300 focus:border-blue-600 focus:outline-none rounded mb-2"
@@ -108,9 +102,6 @@ const Register = () => {
             />
           </div>
           <div className="w-full flex flex-col justify-center">
-            <label className="pl-8" htmlFor="">
-              Password:
-            </label>
             <input
               placeholder="Password"
               className="self-center w-[340px] px-3 py-1.5 bg-white border border-gray-300 focus:border-blue-600 focus:outline-none rounded mb-2"
